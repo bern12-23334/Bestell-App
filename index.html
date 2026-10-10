@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Burger House</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="dbs.js"></script>
+    <script src="basket.js"></script>
+    <script src="menu.js"></script>
+    <script src="checkout.js"></script>
+
+</head>
+
+
+<body onload="init()">
+
+    <div class="content">
+
+        <header>
+
+            <h1>BURGER HOUSE</h1>
+
+            <p>
+                4.1 ⭐ (317 Bewertungen)
+            </p>
+
+            <p>
+                Leckeres Essen schnell geliefert
+            </p>
+
+        </header>
+
+
+        <div class="logo">
+
+            <img
+                src="fotos/name.png"
+                alt="Burger House Logo">
+
+        </div>
+
+
+        <div class="List">
+
+            <h2>
+                Unsere Speisekarte
+            </h2>
+
+        </div>
+
+
+        <div class="container">
+
+            <main
+                class="menu"
+                id="menu">
+            </main>
+
+
+            <aside class="basket">
+
+                <h2>
+                    Dein Warenkorb
+                </h2>
+
+
+                <div id="basketItems">
+                </div>
+
+
+                <hr>
+
+
+                <p>
+
+                    <span>
+                        Zwischensumme:
+                    </span>
+
+                    <span>
+
+                        <span id="subtotal">
+                            0.00
+                        </span>
+
+                        €
+
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <span>
+                        Lieferkosten:
+                    </span>
+
+                    <span>
+                        4.99 €
+                    </span>
+
+                </p>
+
+
+                <p class="total">
+
+                    <span>
+                        Gesamt:
+                    </span>
+
+                    <span>
+
+                        <span id="total">
+                            4.99
+                        </span>
+
+                        €
+
+                    </span>
+
+                </p>
+
+
+                <button
+                    class="checkout-button"
+                    onclick="checkout()">
+
+                    Jetzt kaufen
+
+                </button>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Burger House
+        </p>
+
+    </footer>
+
+
+    <div
+        id="checkout"
+        class="checkout-overlay">
+
+
+        <div class="checkout-box">
+
+
+            <button
+                class="close-button"
+                onclick="closeCheckout()">
+
+                ×
+
+            </button>
+
+
+            <h2>
+                Bestellung
+            </h2>
+
+
+            <p class="checkout-total">
+
+                Gesamt:
+
+                <b>
+
+                    <span id="checkoutTotal">
+                        0.00
+                    </span>
+
+                    €
+
+                </b>
+
+            </p>
+
+
+            <label for="name">
+                Name
+            </label>
+
+            <input
+                id="name"
+                type="text"
+                placeholder="Dein Name">
+
+
+            <label for="address">
+                Lieferadresse
+            </label>
+
+            <input
+                id="address"
+                type="text"
+                placeholder="Straße und Hausnummer">
+
+
+            <label for="city">
+                Ort
+            </label>
+
+            <input
+                id="city"
+                type="text"
+                placeholder="Ort">
+
+
+            <button
+                class="order-button"
+                onclick="placeOrder()">
+
+                Bestellung abschicken
+
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
