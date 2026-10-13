@@ -1,4 +1,12 @@
 ```css
+/* ========================================
+   GRUNDEINSTELLUNGEN
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
 html {
     width: 100%;
     min-width: 320px;
@@ -9,9 +17,12 @@ body {
     width: 100%;
     min-width: 320px;
     margin: 0;
+    padding: 0;
+
     font-family: Arial, Helvetica, sans-serif;
     background: black;
     color: black;
+
     overflow-x: clip;
 }
 
@@ -28,7 +39,8 @@ input {
 }
 
 .content,
-.all {
+.all,
+.menu-section {
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -36,28 +48,27 @@ input {
 }
 
 .content {
-    max-width: 1440px;
     margin: 0 auto;
 }
 
 
-/* HEADER MIT HINTERGRUNDBILD */
+/* ========================================
+   HEADER MIT HINTERGRUNDBILD
+======================================== */
 
 header {
-    width: 100%;
-    min-width: 0;
-    height: 360px;
-    min-height: 360px;
+    position: relative;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
-    padding: 30px;
-    box-sizing: border-box;
+    width: 100%;
+    height: clamp(240px, 30vw, 420px);
+    min-height: 240px;
 
-    position: relative;
-    margin-bottom: 100px;
+    padding: clamp(15px, 3vw, 30px);
+    margin-bottom: clamp(120px, 15vw, 165px);
 
     color: white;
 
@@ -76,41 +87,45 @@ header {
 
 header h1 {
     max-width: 100%;
-    font-size: 48px;
-    line-height: 1.15;
-    overflow-wrap: anywhere;
     margin: 0 0 10px;
+
+    font-size: clamp(24px, 4vw, 48px);
+    line-height: 1.15;
+
+    overflow-wrap: anywhere;
 }
 
 header p {
     max-width: 100%;
-    font-size: 16px;
-    line-height: 1.5;
     margin: 0 0 4px;
+
+    font-size: clamp(13px, 1.5vw, 16px);
+    line-height: 1.5;
+
     overflow-wrap: anywhere;
 }
 
 
-/* VORDERGRUND-LOGO IM HEADER */
+/* ========================================
+   LOGO IM HEADER
+======================================== */
 
 .logo {
-    width: 320px;
-    height: 329px;
-    max-width: 90%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translate(-50%, 50%);
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: clamp(220px, 25vw, 320px);
+    height: clamp(226px, 25.7vw, 329px);
+    max-width: 90%;
+
     margin: 0;
     padding: 10px;
-
-    box-sizing: border-box;
 
     background-size: cover;
     background-position: center;
@@ -121,20 +136,24 @@ header p {
 
 .logo img {
     display: block;
-    width: auto;
-    height: auto;
+
+    width: 100%;
+    height: 100%;
+
     max-width: 100%;
     max-height: 100%;
+
     object-fit: contain;
 }
 
 
-/* ZWEITES BILD: NAME.PNG */
+/* ========================================
+   ZWEITES LOGO: logo1
+======================================== */
 
 .logo1 {
-    width: 480px;
+    width: min(480px, 100%);
     height: auto;
-    max-width: 100%;
 
     margin: 0 auto 10px;
     padding: 0;
@@ -142,150 +161,184 @@ header p {
 
 .logo1 img {
     display: block;
+
     width: 100%;
     height: auto;
     max-width: 100%;
+
     object-fit: contain;
 }
 
 
-/* SPEISEKARTE */
+/* ========================================
+   SPEISEKARTEN-ÜBERSCHRIFT
+======================================== */
 
 .List {
     width: 100%;
     max-width: 100%;
     min-width: 0;
 
-    margin-top: 0;
-    margin-bottom: 15px;
-
-    padding: 0 25px;
-    box-sizing: border-box;
+    margin: 0 0 15px;
+    padding: 0 clamp(12px, 2.5vw, 25px);
 }
 
 .List h2 {
-    background: none;
-    padding: 0;
-    font-size: 28px;
+    margin: 0;
+
+    font-size: clamp(21px, 2.2vw, 28px);
     line-height: 1.3;
+
     overflow-wrap: anywhere;
 }
 
 .category-title {
     max-width: 100%;
+
+    margin: 25px 0 15px;
+    padding: 0;
+
     background: none;
     color: white;
-    padding: 0;
-    margin: 25px 0 15px;
-    font-size: 24px;
+
+    font-size: clamp(20px, 2vw, 24px);
     line-height: 1.3;
-    text-underline-position: auto;
+
     text-decoration-thickness: 2px;
+    text-underline-position: auto;
+
     overflow-wrap: anywhere;
 }
 
 
-/* MENÜ UND WARENKORB */
+/* ========================================
+   MENÜ UND WARENKORB
+======================================== */
 
 .container {
     display: flex;
     align-items: flex-start;
-    gap: 24px;
+
+    gap: clamp(12px, 2vw, 24px);
 
     width: 100%;
-    max-width: 100%;
+    max-width: 1440px;
     min-width: 0;
 
-    padding: 0 25px;
-    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 clamp(12px, 2.5vw, 25px);
 }
 
 .menu {
     flex: 1 1 0;
+
     width: 100%;
     max-width: 100%;
     min-width: 0;
 }
 
+
+/* ========================================
+   EINZELNE MENÜKARTEN
+======================================== */
+
 .menu-item {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: center;
+
+    gap: clamp(10px, 1.5vw, 20px);
 
     width: 100%;
     max-width: 100%;
     min-width: 0;
 
-    background: rgb(182, 182, 52);
-    padding: 18px;
     margin: 0 0 16px;
+    padding: clamp(10px, 1.5vw, 18px);
 
-    border-radius: 14px;
+    background: rgb(182, 182, 52);
+
     border: 1px solid #e7e7e7;
+    border-radius: 14px;
 
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
 }
 
 .menu-info {
     flex: 1 1 0;
+
     width: 100%;
     min-width: 0;
+
     overflow-wrap: anywhere;
 }
 
 .menu-item h3 {
     max-width: 100%;
-    font-size: 20px;
-    line-height: 1.3;
+
     margin: 0 0 8px;
+
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 1.3;
+
     overflow-wrap: anywhere;
 }
 
 .menu-item p {
     max-width: 100%;
-    color: #444;
-    font-size: 15px;
-    line-height: 1.5;
+
     margin: 0 0 7px;
+
+    color: #444;
+    font-size: clamp(13px, 1.2vw, 15px);
+    line-height: 1.5;
+
     overflow-wrap: anywhere;
 }
 
 .menu-item .price {
-    color: #111;
-    font-size: 17px;
-    font-weight: bold;
     margin-top: 12px;
+
+    color: #111;
+    font-size: clamp(15px, 1.4vw, 17px);
+    font-weight: bold;
 }
 
 .menu-item img {
-    display: block;
-    flex: 0 1 220px;
-    width: 220px;
+    flex: 0 1 clamp(100px, 18vw, 220px);
+
+    width: clamp(100px, 18vw, 220px);
     max-width: 45%;
     min-width: 0;
-    height: 170px;
+
+    height: clamp(100px, 14vw, 170px);
 
     object-fit: cover;
     border-radius: 10px;
 }
 
 
-/* MENGEN-AUSWAHL */
+/* ========================================
+   MENGEN-AUSWAHL
+======================================== */
 
 .quantity-buttons {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
     gap: 8px;
+
     max-width: 100%;
     margin-top: 12px;
 }
 
 .quantity-buttons button {
     flex: 0 0 40px;
+
     width: 40px;
     height: 40px;
+
     padding: 0;
 
     border: none;
@@ -293,8 +346,10 @@ header p {
 
     background: #111;
     color: white;
+
     font-size: 20px;
     cursor: pointer;
+
     touch-action: manipulation;
 }
 
@@ -303,46 +358,58 @@ header p {
 }
 
 
-/* WARENKORB */
+/* ========================================
+   WARENKORB
+======================================== */
 
 .basket {
-    width: 329px;
-    max-width: 100%;
-    min-width: 0;
     flex: 0 1 329px;
 
+    width: 329px;
+    max-width: 35%;
+    min-width: 0;
+
+    margin: 0;
+    padding: clamp(14px, 2vw, 24px);
+
     background: rgb(182, 182, 52);
+
     border: 1px solid #e5e5e5;
     border-radius: 14px;
-
-    padding: 24px;
-    margin: 0;
 
     position: sticky;
     top: 20px;
 
     overflow-wrap: anywhere;
+
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
 }
 
 .basket h2 {
-    background: none;
-    padding: 0;
     margin: 0 0 20px;
-    font-size: 22px;
+    padding: 0;
+
+    background: none;
+
+    font-size: clamp(19px, 1.8vw, 22px);
+
     overflow-wrap: anywhere;
 }
 
 .basket-item {
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
     min-width: 0;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eee;
+
     overflow-wrap: anywhere;
 }
 
 .basket-name {
-    font-weight: 600;
     margin-bottom: 8px;
+    font-weight: 600;
+
     overflow-wrap: anywhere;
 }
 
@@ -350,14 +417,17 @@ header p {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
     gap: 8px;
     min-width: 0;
 }
 
 .basket-controls button {
     flex: 0 0 30px;
+
     width: 30px;
     height: 30px;
+
     padding: 0;
 
     border: none;
@@ -365,6 +435,7 @@ header p {
 
     background: #111;
     color: white;
+
     cursor: pointer;
     touch-action: manipulation;
 }
@@ -372,23 +443,28 @@ header p {
 .basket-controls strong {
     margin-left: auto;
     min-width: 0;
+
     overflow-wrap: anywhere;
 }
 
 .basket hr {
+    margin: 20px 0;
+
     border: none;
     border-top: 1px solid #eee;
-    margin: 20px 0;
 }
 
 .basket p {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
     gap: 10px;
-    margin: 0 0 12px;
-    color: #444;
+
     min-width: 0;
+    margin: 0 0 12px;
+
+    color: #444;
 }
 
 .basket p span {
@@ -403,16 +479,19 @@ header p {
 }
 
 
-/* CHECKOUT-BUTTON */
+/* ========================================
+   CHECKOUT-BUTTON
+======================================== */
 
 .checkout-button {
     display: block;
+
     width: 100%;
     max-width: 100%;
     min-width: 0;
 
-    padding: 14px;
     margin-top: 15px;
+    padding: 14px;
 
     border: none;
     border-radius: 8px;
@@ -422,8 +501,10 @@ header p {
 
     font-size: 16px;
     font-weight: bold;
+
     cursor: pointer;
     overflow-wrap: anywhere;
+
     touch-action: manipulation;
 }
 
@@ -432,7 +513,9 @@ header p {
 }
 
 
-/* CHECKOUT-FENSTER */
+/* ========================================
+   CHECKOUT-FENSTER
+======================================== */
 
 .checkout-overlay {
     display: none;
@@ -444,12 +527,13 @@ header p {
     height: 100%;
     height: 100dvh;
 
-    background: rgba(0, 0, 0, 0.55);
-
     justify-content: center;
     align-items: center;
 
     padding: 20px;
+
+    background: rgba(0, 0, 0, 0.55);
+
     z-index: 1000;
 
     overflow-x: hidden;
@@ -465,37 +549,46 @@ header p {
 
     max-height: calc(100vh - 40px);
     max-height: calc(100dvh - 40px);
-    overflow-x: hidden;
-    overflow-y: auto;
+
+    padding: 30px;
 
     background: white;
-    padding: 30px;
     border-radius: 18px;
 
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .checkout-box h2 {
-    background: none;
-    padding: 0;
     margin: 0 35px 10px 0;
-    font-size: 26px;
+    padding: 0;
+
+    background: none;
+
+    font-size: clamp(21px, 2.5vw, 26px);
+
     overflow-wrap: anywhere;
 }
 
 .checkout-total {
     margin-bottom: 25px;
+
     color: #555;
+
     overflow-wrap: anywhere;
 }
 
 .checkout-box label {
     display: block;
+
     margin-top: 15px;
     margin-bottom: 6px;
 
     font-size: 14px;
     font-weight: bold;
+
     overflow-wrap: anywhere;
 }
 
@@ -512,18 +605,21 @@ header p {
     border-radius: 8px;
 
     font-size: 16px;
-    outline: none;
 }
 
 .checkout-box input:focus {
+    outline: none;
     border-color: #111;
 }
 
 
-/* BESTELLEN */
+/* ========================================
+   BESTELLEN
+======================================== */
 
 .order-button {
     display: block;
+
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -539,8 +635,10 @@ header p {
 
     font-size: 16px;
     font-weight: bold;
+
     cursor: pointer;
     overflow-wrap: anywhere;
+
     touch-action: manipulation;
 }
 
@@ -549,7 +647,9 @@ header p {
 }
 
 
-/* SCHLIESSEN-BUTTON */
+/* ========================================
+   SCHLIESSEN-BUTTON
+======================================== */
 
 .close-button {
     position: absolute;
@@ -558,6 +658,7 @@ header p {
 
     width: 35px;
     height: 35px;
+
     padding: 0;
 
     border: none;
@@ -567,6 +668,7 @@ header p {
     color: #222;
 
     font-size: 24px;
+
     cursor: pointer;
     touch-action: manipulation;
 }
@@ -576,22 +678,23 @@ header p {
 }
 
 
-/* FOOTER */
+/* ========================================
+   FOOTER
+======================================== */
 
 .footer {
     width: 100%;
     max-width: 100%;
     min-width: 0;
 
-    padding: 25px 15px;
     margin-top: 40px;
+    padding: 25px 15px;
 
-    text-align: center;
     background: #111;
     color: white;
 
+    text-align: center;
     overflow-wrap: anywhere;
-    box-sizing: border-box;
 }
 
 .footer p {
@@ -599,52 +702,68 @@ header p {
 }
 
 
-/* TABLETS */
+/* ========================================
+   TABLETS UND KLEINERE LAPTOPS
+   BIS 1000px
+======================================== */
 
 @media (max-width: 1000px) {
     .container {
-        gap: 20px;
-        padding: 0 20px;
+        gap: 18px;
     }
 
     .basket {
-        flex: 0 1 300px;
-        width: 300px;
-        padding: 18px;
-    }
-
-    .menu-item {
-        gap: 14px;
+        flex-basis: 280px;
+        width: 280px;
     }
 
     .menu-item img {
-        flex-basis: 180px;
-        width: 180px;
-        height: 145px;
+        flex-basis: 160px;
+        width: 160px;
+        height: 135px;
     }
 }
 
 
-/* MOBILGERÄTE */
+/* ========================================
+   TABLETS UND HANDYS
+   BIS 768px
+======================================== */
 
 @media (max-width: 768px) {
     header {
         height: 300px;
-        min-height: 250px;
-        padding: 24px 18px;
+        min-height: 260px;
+
+        margin-bottom: 150px;
+
+        background-size: cover;
+        background-position: center;
     }
 
-    header h1 {
-        font-size: clamp(28px, 5vw, 40px);
+    .logo {
+        width: clamp(220px, 40vw, 300px);
+        height: clamp(226px, 41.2vw, 309px);
+        max-width: 90%;
+    }
+
+    .logo1 {
+        width: min(480px, 100%);
+        margin: 0 auto 8px;
+    }
+
+    .List {
+        margin-top: 0;
+        margin-bottom: 14px;
     }
 
     .container {
         flex-direction: column;
         align-items: stretch;
-        gap: 24px;
+
+        gap: 20px;
 
         width: 100%;
-        max-width: 100%;
         padding: 0 16px;
     }
 
@@ -655,56 +774,83 @@ header p {
     }
 
     .basket {
+        position: static;
+
         width: 100%;
         max-width: 100%;
         min-width: 0;
-        flex: 1 1 auto;
 
+        flex: 1 1 auto;
         margin: 0;
-        position: static;
+    }
+
+    .menu-item {
+        gap: 12px;
     }
 
     .menu-item img {
-        max-width: 40%;
+        flex: 0 1 160px;
+
+        width: 35%;
+        max-width: 160px;
+        height: clamp(100px, 18vw, 140px);
     }
 
-    .List {
-        padding: 0 16px;
+    .checkout-overlay {
+        padding: 12px;
+    }
+
+    .checkout-box {
+        max-width: 480px;
+
+        max-height: calc(100vh - 24px);
+        max-height: calc(100dvh - 24px);
+
+        padding: 24px;
     }
 }
 
 
-/* KLEINE BILDSCHIRME */
+/* ========================================
+   HANDYS
+   BIS 600px
+======================================== */
 
 @media (max-width: 600px) {
     header {
         height: 270px;
-        min-height: 220px;
-        padding: 20px 15px;
-        background-position: center;
+        min-height: 240px;
+
+        margin-bottom: 135px;
+        padding: 18px;
     }
 
-    header h1 {
-        font-size: clamp(24px, 6vw, 32px);
-        line-height: 1.2;
+    .logo {
+        width: clamp(220px, 50vw, 280px);
+        height: clamp(226px, 51.5vw, 288px);
+        max-width: 90%;
     }
 
-    header p {
-        font-size: 14px;
+    .logo1 {
+        width: 100%;
+        max-width: 480px;
+
+        height: auto;
+        margin: 0 auto 8px;
     }
 
     .List {
         padding: 0 12px;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
     .List h2 {
-        font-size: 24px;
+        font-size: clamp(21px, 5vw, 25px);
     }
 
     .container {
         padding: 0 12px;
-        gap: 20px;
+        gap: 18px;
     }
 
     .category-title {
@@ -713,54 +859,46 @@ header p {
     }
 
     .menu-item {
-        flex-direction: column;
-        gap: 12px;
-        padding: 14px;
+        gap: 10px;
+        padding: 12px;
+        margin-bottom: 13px;
+
         border-radius: 12px;
     }
 
-    .menu-info {
-        width: 100%;
-        max-width: 100%;
-    }
-
     .menu-item img {
-        order: -1;
+        flex: 0 1 35%;
 
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-
-        object-fit: cover;
+        width: 35%;
+        max-width: 145px;
+        height: clamp(90px, 20vw, 125px);
     }
 
     .menu-item h3 {
-        font-size: 18px;
+        font-size: clamp(15px, 3.5vw, 18px);
     }
 
     .menu-item p {
-        font-size: 14px;
-        line-height: 1.5;
+        font-size: clamp(12px, 3vw, 14px);
     }
 
     .menu-item .price {
-        font-size: 16px;
+        font-size: 15px;
+    }
+
+    .quantity-buttons {
+        gap: 6px;
     }
 
     .quantity-buttons button {
-        width: 40px;
-        height: 40px;
-        flex-basis: 40px;
+        flex-basis: 36px;
+
+        width: 36px;
+        height: 36px;
     }
 
     .basket {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
         padding: 16px;
-        margin: 0;
         border-radius: 12px;
     }
 
@@ -769,8 +907,7 @@ header p {
     }
 
     .checkout-overlay {
-        align-items: center;
-        padding: 12px;
+        padding: 10px;
     }
 
     .checkout-box {
@@ -781,7 +918,7 @@ header p {
     }
 
     .checkout-box h2 {
-        font-size: 23px;
+        font-size: 22px;
     }
 
     .footer {
@@ -790,126 +927,125 @@ header p {
 }
 
 
-/* SEHR KLEINE BILDSCHIRME */
+/* ========================================
+   KLEINE HANDYS
+   320px BIS 400px
+======================================== */
 
 @media (max-width: 400px) {
     header {
         height: 240px;
-        min-height: 220px;
-        padding: 16px 12px;
-        margin-bottom: 100px;
-    }
+        min-height: 240px;
 
-    header h1 {
-        font-size: 24px;
-    }
-
-    header p {
-        font-size: 13px;
+        margin-bottom: 120px;
+        padding: 12px;
     }
 
     .logo {
-        width: 320px;
-        height: 329px;
+        width: 220px;
+        height: 226px;
         max-width: 90%;
 
-        margin: 0;
-        padding: 10px;
-
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translate(-50%, 50%);
-    }
-
-    .logo img {
-        width: auto;
-        height: auto;
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
+        padding: 8px;
     }
 
     .logo1 {
         width: 100%;
         max-width: 100%;
-        height: auto;
-        margin: 0 auto 10px;
-    }
 
-    .logo1 img {
-        width: 100%;
         height: auto;
-        object-fit: contain;
+        margin: 0 auto 6px;
     }
 
     .List {
         padding: 0 10px;
-        margin-top: 0;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .List h2 {
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .container {
-        width: 100%;
-        max-width: 100%;
         padding: 0 10px;
-        gap: 18px;
-    }
-
-    .menu,
-    .basket {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
+        gap: 15px;
     }
 
     .category-title {
-        font-size: 20px;
-        margin: 18px 0 12px;
+        font-size: 19px;
+        margin: 17px 0 10px;
     }
 
     .menu-item {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
+        gap: 8px;
+        padding: 9px;
+        margin-bottom: 12px;
 
-        padding: 12px;
-        gap: 10px;
-        margin-bottom: 13px;
         border-radius: 10px;
     }
 
-    .menu-item h3 {
-        font-size: 17px;
-    }
-
-    .menu-item p {
-        font-size: 14px;
+    .menu-info {
+        flex: 1 1 0;
+        min-width: 0;
     }
 
     .menu-item img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 10;
+        flex: 0 1 32%;
+
+        width: 32%;
+        max-width: 110px;
+        height: 85px;
+
+        border-radius: 8px;
+    }
+
+    .menu-item h3 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .menu-item p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .menu-item .price {
+        margin-top: 8px;
+        font-size: 14px;
+    }
+
+    .quantity-buttons {
+        gap: 5px;
+        margin-top: 8px;
+    }
+
+    .quantity-buttons button {
+        flex-basis: 34px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 18px;
     }
 
     .basket {
-        flex: 1 1 auto;
-        margin: 0;
-        padding: 13px;
+        padding: 12px;
     }
 
     .basket h2 {
         font-size: 19px;
+        margin-bottom: 14px;
     }
 
     .basket-controls {
         gap: 6px;
+    }
+
+    .basket-controls button {
+        flex-basis: 28px;
+
+        width: 28px;
+        height: 28px;
     }
 
     .checkout-overlay {
@@ -927,7 +1063,7 @@ header p {
     }
 
     .checkout-box h2 {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .checkout-box input {
@@ -937,16 +1073,37 @@ header p {
     .close-button {
         top: 10px;
         right: 10px;
+
         width: 32px;
         height: 32px;
     }
 
     .footer {
-        padding: 20px 10px;
-        font-size: 14px;
+        padding: 18px 10px;
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================
+   GROSSE BILDSCHIRME
+   AB 1440px
+======================================== */
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+    }
+
+    .logo1 {
+        width: 480px;
     }
 }
 ```
+
+
+
+
 
 
 
