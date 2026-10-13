@@ -18,7 +18,7 @@ function renderMenu() {
         let i = 0;
         i < categories.length;
         i++
-    ) {
+    ) { 
 
         let category =
             categories[i];
