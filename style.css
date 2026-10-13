@@ -1,7 +1,3 @@
-
-
-
-
 html {
     width: 100%;
     min-width: 320px;
@@ -118,7 +114,13 @@ header p {
     max-height: 100%;
     object-fit: contain;
 }
+.logo1 {
+    width: 480px;
+    height: 500px;
+    max-width: 100%;
 
+    margin: 0 auto;
+}
 
 .List {
     width: 100%;
