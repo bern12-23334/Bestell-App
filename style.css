@@ -1,3 +1,4 @@
+```css
 html {
     width: 100%;
     min-width: 320px;
@@ -40,6 +41,7 @@ input {
 }
 
 
+/* HEADER MIT HINTERGRUNDBILD */
 
 header {
     width: 100%;
@@ -52,6 +54,11 @@ header {
     justify-content: flex-end;
 
     padding: 30px;
+    box-sizing: border-box;
+
+    position: relative;
+    margin-bottom: 100px;
+
     color: white;
 
     background-image:
@@ -84,25 +91,31 @@ header p {
 }
 
 
+/* VORDERGRUND-LOGO IM HEADER */
 
 .logo {
     width: 320px;
     height: 329px;
-    max-width: 100%;
-
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    max-width: 90%;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    margin: 20px auto;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+
+    margin: 0;
     padding: 10px;
 
     box-sizing: border-box;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -114,20 +127,40 @@ header p {
     max-height: 100%;
     object-fit: contain;
 }
+
+
+/* ZWEITES BILD: NAME.PNG */
+
 .logo1 {
     width: 480px;
-    height: 500px;
+    height: auto;
     max-width: 100%;
 
-    margin: 0 auto;
+    margin: 0 auto 10px;
+    padding: 0;
 }
+
+.logo1 img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+
+/* SPEISEKARTE */
 
 .List {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    margin-bottom: 25px;
+
+    margin-top: 0;
+    margin-bottom: 15px;
+
     padding: 0 25px;
+    box-sizing: border-box;
 }
 
 .List h2 {
@@ -152,6 +185,7 @@ header p {
 }
 
 
+/* MENÜ UND WARENKORB */
 
 .container {
     display: flex;
@@ -163,6 +197,7 @@ header p {
     min-width: 0;
 
     padding: 0 25px;
+    box-sizing: border-box;
 }
 
 .menu {
@@ -171,8 +206,6 @@ header p {
     max-width: 100%;
     min-width: 0;
 }
-
-
 
 .menu-item {
     display: flex;
@@ -238,6 +271,8 @@ header p {
 }
 
 
+/* MENGEN-AUSWAHL */
+
 .quantity-buttons {
     display: flex;
     align-items: center;
@@ -268,6 +303,7 @@ header p {
 }
 
 
+/* WARENKORB */
 
 .basket {
     width: 329px;
@@ -367,6 +403,7 @@ header p {
 }
 
 
+/* CHECKOUT-BUTTON */
 
 .checkout-button {
     display: block;
@@ -395,6 +432,7 @@ header p {
 }
 
 
+/* CHECKOUT-FENSTER */
 
 .checkout-overlay {
     display: none;
@@ -482,6 +520,7 @@ header p {
 }
 
 
+/* BESTELLEN */
 
 .order-button {
     display: block;
@@ -510,6 +549,7 @@ header p {
 }
 
 
+/* SCHLIESSEN-BUTTON */
 
 .close-button {
     position: absolute;
@@ -536,6 +576,7 @@ header p {
 }
 
 
+/* FOOTER */
 
 .footer {
     width: 100%;
@@ -550,6 +591,7 @@ header p {
     color: white;
 
     overflow-wrap: anywhere;
+    box-sizing: border-box;
 }
 
 .footer p {
@@ -557,6 +599,7 @@ header p {
 }
 
 
+/* TABLETS */
 
 @media (max-width: 1000px) {
     .container {
@@ -582,6 +625,7 @@ header p {
 }
 
 
+/* MOBILGERÄTE */
 
 @media (max-width: 768px) {
     header {
@@ -630,6 +674,8 @@ header p {
 }
 
 
+/* KLEINE BILDSCHIRME */
+
 @media (max-width: 600px) {
     header {
         height: 270px;
@@ -649,7 +695,7 @@ header p {
 
     .List {
         padding: 0 12px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .List h2 {
@@ -744,12 +790,14 @@ header p {
 }
 
 
+/* SEHR KLEINE BILDSCHIRME */
 
 @media (max-width: 400px) {
     header {
         height: 240px;
         min-height: 220px;
         padding: 16px 12px;
+        margin-bottom: 100px;
     }
 
     header h1 {
@@ -760,13 +808,18 @@ header p {
         font-size: 13px;
     }
 
-    /* Logo proportional halten */
     .logo {
         width: 320px;
         height: 329px;
-        max-width: 100%;
-        margin: 16px auto;
+        max-width: 90%;
+
+        margin: 0;
         padding: 10px;
+
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 50%);
     }
 
     .logo img {
@@ -777,8 +830,23 @@ header p {
         object-fit: contain;
     }
 
+    .logo1 {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 10px;
+    }
+
+    .logo1 img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
     .List {
         padding: 0 10px;
+        margin-top: 0;
+        margin-bottom: 15px;
     }
 
     .List h2 {
@@ -878,6 +946,7 @@ header p {
         font-size: 14px;
     }
 }
+```
 
 
 
