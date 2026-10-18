@@ -1,7 +1,8 @@
  let categories = [
 
-    {
+    {   
         name: "Burger und Sandwiches",
+        image: "fotos/hamurger.png.jpg",
 
         items: [
 
@@ -37,7 +38,7 @@
 
     {
         name: "Pizzas",
-
+        image: "fotos/pizza.home.jpg",
         items: [
 
             {
@@ -73,7 +74,7 @@
 
     {
         name: "Kebabs und Dürums",
-
+        image: "fotos/dürüm-home.jpg",
         items: [
 
             {
@@ -97,7 +98,7 @@
 
     {
         name: "Getränke",
-
+        image: "fotos/tianya1223-drinks-5619113.jpg",
         items: [
 
             {
