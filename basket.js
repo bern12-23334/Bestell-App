@@ -1,198 +1,92 @@
+
 let basket = [];
 
-
-
+// Produkt hinzufügen
 function add(name, price) {
-
     let found = false;
 
-
-    for (
-        let i = 0;
-        i < basket.length;
-        i++
-    ) {
-
-        if (
-            basket[i].name === name
-        ) {
-
+    for (let i = 0; i < basket.length; i++) {
+        if (basket[i].name === name) {
             basket[i].qty++;
-
             found = true;
-
             break;
         }
-
     }
-
 
     if (!found) {
-
         basket.push({
-
             name: name,
-
-            price: price,
-
+            price: Number(price),
             qty: 1
-
         });
-
     }
 
-
     showBasket();
-
 }
 
-
-
+// Ein Produkt entfernen
 function remove(name) {
-
-    for (
-        let i = 0;
-        i < basket.length;
-        i++
-    ) {
-
-        if (
-            basket[i].name === name
-        ) {
-
+    for (let i = 0; i < basket.length; i++) {
+        if (basket[i].name === name) {
             basket[i].qty--;
 
-
-            if (
-                basket[i].qty <= 0
-            ) {
-
+            if (basket[i].qty <= 0) {
                 basket.splice(i, 1);
-
             }
-
 
             break;
         }
-
     }
 
-
     showBasket();
-
 }
 
+// Gesamten Warenkorb leeren
+function clearBasket() {
+    basket.length = 0;
+    showBasket();
+}
 
-
+// Warenkorb und Preise aktualisieren
 function showBasket() {
-
-    let basketItems =
-        document.getElementById(
-            "basketItems"
-        );
-
-
-    let html = "";
-
+    const basketItems = document.getElementById("basketItems");
+    const subtotalElement = document.getElementById("subtotal");
+    const totalElement = document.getElementById("total");
+    const deliveryElement = document.getElementById("delivery");
+    const checkoutTotal = document.getElementById("checkoutTotal");
 
     let subtotal = 0;
 
-
-    for (
-        let i = 0;
-        i < basket.length;
-        i++
-    ) {
-
-        let item =
-            basket[i];
-
-
-        let total =
-            item.price * item.qty;
-
-
-        subtotal += total;
-
-
-        html += `
-
-            <div class="basket-item">
-
-
-                <div class="basket-name">
-
-                    ${item.name}
-
-                </div>
-
-
-                <div class="basket-controls">
-
-
-                    <button
-                        onclick="remove('${item.name}')">
-
-                        -
-
-                    </button>
-
-
-                    <span>
-
-                        ${item.qty}
-
-                    </span>
-
-
-                    <button
-                        onclick="add('${item.name}', ${item.price})">
-
-                        +
-
-                    </button>
-
-
-                    <strong>
-
-                        ${total.toFixed(2)} €
-
-                    </strong>
-
-
-                </div>
-
-
-            </div>
-
-        `;
-
+    for (let i = 0; i < basket.length; i++) {
+        subtotal += basket[i].price * basket[i].qty;
     }
 
+    // Lieferkosten nur berechnen, wenn Produkte vorhanden sind
+    const delivery = basket.length > 0 ? 4.99 : 0;
+    const total = subtotal + delivery;
 
-    basketItems.innerHTML =
-        html;
+    // Produktliste bleibt ausgeblendet
+    if (basketItems) {
+        basketItems.innerHTML = "";
+    }
 
+    if (subtotalElement) {
+        subtotalElement.innerText = subtotal.toFixed(2);
+    }
 
-    
+    if (deliveryElement) {
+        deliveryElement.innerText = delivery.toFixed(2);
+    }
 
-    document.getElementById(
-        "subtotal"
-    ).innerText =
-        subtotal.toFixed(2);
+    if (totalElement) {
+        totalElement.innerText = total.toFixed(2);
+    }
 
-
-
-    let delivery = 4.99;
-
-
-    let total =
-        subtotal + delivery;
-
-
-    document.getElementById(
-        "total"
-    ).innerText =
-        total.toFixed(2);
-
+    // Gesamtpreis im Bestellfenster aktualisieren
+    if (checkoutTotal) {
+        checkoutTotal.innerText = total.toFixed(2);
+    }
 }
+
+// Preise beim Laden der Seite initialisieren
+document.addEventListener("DOMContentLoaded", showBasket);

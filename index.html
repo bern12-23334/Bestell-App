@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -16,14 +16,15 @@
 </head>
 
 <body>
+
 <header>
     <div class="logo">
         <img src="fotos/logo.png" alt="Burger House">
-
     </div>
 </header>
 
 <main class="all">
+
     <section class="content">
         <div class="logo1">
             <img src="fotos/name.png" alt="Burger House">
@@ -31,19 +32,26 @@
     </section>
 
     <section class="menu-section">
+
         <div class="List">
             <h2>Unsere Speisekarte</h2>
             <p>Entdecke unsere Burger, Beilagen und Getränke.</p>
         </div>
 
-        <nav class="category-slider" id="categorySlider"
-             aria-label="Speisekarten-Kategorien">
+        <nav
+            class="category-slider"
+            id="categorySlider"
+            aria-label="Speisekarten-Kategorien">
         </nav>
 
         <div class="container">
+
+            <!-- Speisekarte -->
             <div class="menu" id="menu"></div>
 
+            <!-- Warenkorb -->
             <aside class="basket">
+
                 <h2>Dein Warenkorb</h2>
 
                 <div id="basketItems"></div>
@@ -52,60 +60,48 @@
 
                 <p>
                     <span>Zwischensumme:</span>
-                    <span><span id="subtotal">0.00</span> €</span>
+                    <span>
+                        <span id="subtotal">0.00</span> €
+                    </span>
                 </p>
 
                 <p>
                     <span>Lieferkosten:</span>
-                    <span>4.99 €</span>
+                    <span>
+                        <span id="delivery">4.99</span> €
+                    </span>
                 </p>
 
                 <p class="total">
                     <span>Gesamt:</span>
-                    <span><span id="total">4.99</span> €</span>
+                    <span>
+                        <span id="total">0.00</span> €
+                    </span>
                 </p>
 
-                <button class="checkout-button" onclick="checkout()">
+                <!-- Warenkorb leeren -->
+                <button
+                    type="button"
+                    class="clear-button"
+                    onclick="clearBasket()">
+                    Warenkorb leeren
+                </button>
+
+                <!-- Bestellen -->
+                <button
+                    type="button"
+                    class="checkout-button"
+                    onclick="checkout()">
                     Jetzt kaufen
                 </button>
+
             </aside>
+
         </div>
     </section>
+
 </main>
-
-<div id="checkout" class="checkout-overlay">
-    <div class="checkout-box">
-        <button class="close-button" onclick="closeCheckout()"
-                aria-label="Schließen">×</button>
-
-        <h2>Bestellung</h2>
-
-        <p class="checkout-total">
-            Gesamt: <b><span id="checkoutTotal">0.00</span> €</b>
-        </p>
-
-        <label for="name">Name</label>
-        <input id="name" type="text" placeholder="Dein Name">
-
-        <label for="address">Lieferadresse</label>
-        <input id="address" type="text"
-               placeholder="Straße und Hausnummer">
-
-        <label for="city">Ort</label>
-        <input id="city" type="text" placeholder="Ort">
-
-        <button class="order-button" onclick="placeOrder()">
-            Bestellung abschicken
-        </button>
-    </div>
-</div>
-
-<footer class="footer">
-    <p>© 2026 Burger House</p>
-</footer>
 
 </body>
 </html>
-
-
-
+```

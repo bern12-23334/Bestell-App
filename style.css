@@ -926,3 +926,40 @@ header p {
         width: 480px;
     }
 }
+
+/* ===== Warenkorb leeren Button ===== */
+
+.clear-button {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    background-color: #e53935;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.clear-button:hover {
+    background-color: #c62828;
+}
+
+.clear-button:active {
+    transform: scale(0.98);
+}
+
+.clear-button:focus-visible {
+    outline: 3px solid #111;
+    outline-offset: 3px;
+}
+
