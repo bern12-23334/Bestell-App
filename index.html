@@ -1,14 +1,20 @@
-```html
+
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Burger House</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="fotos/logo.png">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- JavaScript -->
     <script src="dbs.js" defer></script>
     <script src="basket.js" defer></script>
     <script src="menu.js" defer></script>
@@ -17,90 +23,185 @@
 
 <body>
 
-<header>
-    <div class="logo">
-        <img src="fotos/logo.png" alt="Burger House">
-    </div>
-</header>
+    <!-- ==================================
+         HEADER
+    ================================== -->
 
-<main class="all">
+    <header>
 
-    <section class="content">
-        <div class="logo1">
-            <img src="fotos/name.png" alt="Burger House">
-        </div>
-    </section>
-
-    <section class="menu-section">
-
-        <div class="List">
-            <h2>Unsere Speisekarte</h2>
-            <p>Entdecke unsere Burger, Beilagen und Getränke.</p>
+        <div class="logo">
+            <img src="fotos/logo.png" alt="Burger House">
         </div>
 
-        <nav
-            class="category-slider"
-            id="categorySlider"
-            aria-label="Speisekarten-Kategorien">
-        </nav>
+    </header>
 
-        <div class="container">
 
-            
-            <div class="menu" id="menu"></div>
+    <!-- ==================================
+         HAUPTBEREICH
+    ================================== -->
 
-            
-            <aside class="basket">
+    <main class="all">
 
-                <h2>Dein Warenkorb</h2>
+        <!-- LOGO UND NAME -->
 
-                <div id="basketItems"></div>
+        <section class="content">
 
-                <hr>
+            <div class="logo1">
+                <img src="fotos/name.png" alt="Burger House">
+            </div>
+
+        </section>
+
+
+        <!-- ==================================
+             SPEISEKARTE
+        ================================== -->
+
+        <section class="menu-section">
+
+            <div class="List">
+
+                <h2>Unsere Speisekarte</h2>
 
                 <p>
-                    <span>Zwischensumme:</span>
-                    <span>
-                        <span id="subtotal">0.00</span> €
-                    </span>
+                    Entdecke unsere Burger, Beilagen und Getränke.
                 </p>
 
-                <p>
-                    <span>Lieferkosten:</span>
-                    <span>
-                        <span id="delivery">4.99</span> €
-                    </span>
-                </p>
+            </div>
 
-                <p class="total">
-                    <span>Gesamt:</span>
-                    <span>
-                        <span id="total">0.00</span> €
-                    </span>
-                </p>
 
-                
-                <button
-                    type="button"
-                    class="clear-button"
-                    onclick="clearBasket()">
-                    Warenkorb leeren
-                </button>
+            <!-- KATEGORIE SLIDER -->
 
-                
-                <button
-                    type="button"
-                    class="checkout-button"
-                    onclick="checkout()">
-                    Jetzt kaufen
-                </button>
+            <nav
+                class="category-slider"
+                id="categorySlider"
+                aria-label="Speisekarten-Kategorien">
+            </nav>
 
-            </aside>
 
-        </div>
-    </section>
+            <!-- ==================================
+                 MENÜ UND WARENKORB
+            ================================== -->
 
-</main>
+            <div class="container">
+
+
+                <!-- MENÜ -->
+
+                <div
+                    class="menu"
+                    id="menu">
+                </div>
+
+
+                <!-- ==================================
+                     WARENKORB
+                ================================== -->
+
+                <aside class="basket">
+
+                    <h2>Dein Warenkorb</h2>
+
+
+                    <!-- PRODUKTLISTE
+                         Nur dieser Bereich scrollt -->
+
+                    <div
+                        class="basket-items"
+                        id="basketItems">
+
+                    </div>
+
+
+                    <!-- UNTERER BEREICH
+                         Bleibt immer sichtbar -->
+
+                    <div class="basket-footer">
+
+                        <hr>
+
+
+                        <!-- ZWISCHENSUMME -->
+
+                        <p>
+                            <span>Zwischensumme:</span>
+
+                            <span>
+                                <span id="subtotal">0.00</span> €
+                            </span>
+                        </p>
+
+
+                        <!-- LIEFERKOSTEN -->
+
+                        <p>
+                            <span>Lieferkosten:</span>
+
+                            <span>
+                                <span id="delivery">4.99</span> €
+                            </span>
+                        </p>
+
+
+                        <!-- GESAMTPREIS -->
+
+                        <p class="total">
+                            <span>Gesamt:</span>
+
+                            <span>
+                                <span id="total">0.00</span> €
+                            </span>
+                        </p>
+
+
+                        <!-- WARENKORB LEEREN -->
+
+                        <button
+                            type="button"
+                            class="clear-button"
+                            onclick="clearBasket()">
+
+                            Warenkorb leeren
+
+                        </button>
+
+
+                        <!-- CHECKOUT -->
+
+                        <button
+                            type="button"
+                            class="checkout-button"
+                            onclick="checkout()">
+
+                            Jetzt kaufen
+
+                        </button>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================
+         FOOTER
+    ================================== -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Burger House | Alle Rechte vorbehalten.
+        </p>
+
+    </footer>
 
 </body>
+
 </html>
+
+
