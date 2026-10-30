@@ -1,18 +1,13 @@
+
 function init() {
     const menu = document.getElementById("menu");
     const slider = document.getElementById("categorySlider");
 
     if (!menu || !slider) {
-        console.error(
-            "Fehler: Das Element #menu oder #categorySlider fehlt."
-        );
         return;
     }
 
     if (typeof categories === "undefined") {
-        console.error(
-            "Fehler: categories wurde nicht geladen. Prüfe dbs.js."
-        );
         return;
     }
 
@@ -29,7 +24,6 @@ function renderMenu() {
                 <img
                     src="${category.image}"
                     alt="${category.name}"
-                    onerror="this.onerror=null; console.error('Kategorie-Bild fehlt:', this.src);"
                 >
                 <h2>${category.name}</h2>
             </div>
@@ -68,7 +62,6 @@ function renderMenu() {
                             src="${item.image}"
                             alt="${item.name}"
                             loading="lazy"
-                            onerror="this.onerror=null; console.error('Gericht-Bild fehlt:', this.src);"
                         >
 
                     </article>

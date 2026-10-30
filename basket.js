@@ -1,7 +1,7 @@
 
 let basket = [];
 
-// Produkt hinzufügen
+
 function add(name, price) {
     let found = false;
 
@@ -24,7 +24,7 @@ function add(name, price) {
     showBasket();
 }
 
-// Ein Produkt entfernen
+
 function remove(name) {
     for (let i = 0; i < basket.length; i++) {
         if (basket[i].name === name) {
@@ -41,13 +41,13 @@ function remove(name) {
     showBasket();
 }
 
-// Gesamten Warenkorb leeren
+
 function clearBasket() {
     basket.length = 0;
     showBasket();
 }
 
-// Warenkorb und Preise aktualisieren
+
 function showBasket() {
     const basketItems = document.getElementById("basketItems");
     const subtotalElement = document.getElementById("subtotal");
@@ -88,5 +88,5 @@ function showBasket() {
     }
 }
 
-// Preise beim Laden der Seite initialisieren
+
 document.addEventListener("DOMContentLoaded", showBasket);
