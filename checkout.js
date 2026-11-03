@@ -94,8 +94,8 @@ function checkout() {
                 if (!form.reportValidity()) return;
 
                 document.getElementById("orderMessage").textContent =
-                    "Das Formular ist ausgefüllt. Der Versand der Bestellung " +
-                    "muss noch eingerichtet werden.";
+                    "Die  Bestellung ist bei uns eingangen." +
+                    "Sobald Ihre Bestellung zur Lieferung bereit ist, werden Sie per E-Mail benachrichtigt. Vielen Dank für Ihre Bestellung.";
             }
         );
     }
