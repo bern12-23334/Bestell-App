@@ -113,9 +113,7 @@
                 price: 3.49,
                 description: "Erfrischende Wasser in der Flasche",
                 image: "fotos/garuda_somanna-christian-9846485.jpg"
-            },
-
-        
+            }, 
         ]
         }
     ];
