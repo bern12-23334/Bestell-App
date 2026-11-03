@@ -94,7 +94,7 @@ function checkout() {
                 if (!form.reportValidity()) return;
 
                 document.getElementById("orderMessage").textContent =
-                    "Die  Bestellung ist bei uns eingangen." +
+                    "Die  Bestellung ist bei uns eingegangen." +
                     "Sobald Ihre Bestellung zur Lieferung bereit ist, werden Sie per E-Mail benachrichtigt. Vielen Dank für Ihre Bestellung.";
             }
         );
